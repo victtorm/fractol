@@ -6,14 +6,13 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:03:20 by vbritto-          #+#    #+#             */
-/*   Updated: 2024/04/16 19:16:52 by vbritto-         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:43:06 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-// # include "minilibx-linux/mlx_int.h"
 # include "minilibx-linux/mlx.h"
 # include <math.h>
 # include <unistd.h>
@@ -24,8 +23,8 @@
 # include <X11/X.h>
 # include <X11/keysym.h>
 
-#define WIDTH 1500
-#define HEIGHT 1500
+#define WIDTH 1
+#define HEIGHT 1
 
 // COLOR
 
@@ -43,9 +42,9 @@ typedef struct s_complex
 
 typedef struct	s_img
 {
-	void	*img_ptr; //pointer to image struct
-	char	*pixels_ptr; //points to the actual pixels
-	int		bpp;
+	void	*image;
+	char	*pixels_adr;
+	int		bits_per_pixel;
 	int		endian;
 	int		line_len;
 }           t_img;
@@ -72,11 +71,13 @@ int         check_mandelbrot(char *str1, char *str2);
 size_t      ft_strlen(const char *src);
 void        ft_strtolower(char *str);
 
+
 // JULIA
 
 int         check_julia(char *str1, char *str2, char *r,  char *i);
 int         check_number(char *str);
-
+double	    atodb(char *str);
+double      ft_pow(double x, double y);
 // START_FRACTOL
 
 void        fractal_init(t_fractal *fractal);
@@ -90,7 +91,8 @@ t_complex   ft_square(t_complex z);
 // FRACTOL_IMG
 
 void        fractal_img(t_fractal *fractal);
-// static void scale_pixel(int x, int y, t_fractal *fractal);
+//static void scale_pixel(int x, int y, t_fractal *fractal);
 double	scale(double u_num, double n_min, double n_max, double o_max);
+void	ft_put_pixels(t_img *img, int x, int y, int color);
 
 #endif

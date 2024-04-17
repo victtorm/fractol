@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:27:18 by vbritto-          #+#    #+#             */
-/*   Updated: 2024/04/16 19:23:33 by vbritto-         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:15:19 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_strlen(const char *src)
 int	check_mandelbrot(char *str1, char *str2)
 {
 	ft_strtolower(str1);
-	if (str1 == NULL || strlen(str1) != 10)
+	if (str1 == NULL || ft_strlen(str1) != 10)
 		return (1);
 	while ((*str1 == *str2) && (*str1 != '\0'))
 	{

@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 18:13:10 by vbritto-          #+#    #+#             */
-/*   Updated: 2024/04/16 18:53:29 by vbritto-         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:09:57 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ int	main(int argc, char **argv)
 		fractal.set = argv[1];
 		if (argc == 4)
 		{
-			fractal.c_real = atof(argv[2]);
-			fractal.c_imaginary = atof(argv[3]);
+			fractal.c_real = atodb(argv[2]);
+			fractal.c_imaginary = atodb(argv[3]);
 		}
 		fractal_init(&fractal);
 		fractal_img(&fractal);
-		mlx_loop(fractal.mlx_connection)
+		mlx_loop(fractal.mlx_connection);
 	}
 	return (0);
 }
+  /// checar todas as variaveis de t_img 

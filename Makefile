@@ -2,7 +2,7 @@ FRACTOL_FILES = check_julia.c check_mandelbrot.c fractal_init.c fractal_img.c ma
 OBJS = ${FRACTOL_FILES:.c=.o}
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 NAME = fractol
 MINILIBXD = ./minilibx-linux
 MINILIBX = ./minilibx-linux/libmlx.a

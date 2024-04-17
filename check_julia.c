@@ -6,11 +6,51 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:11:13 by vbritto-          #+#    #+#             */
-/*   Updated: 2024/04/16 19:21:57 by vbritto-         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:19:34 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+
+double  ft_pow(double x, double y)
+{
+    double  result;
+
+    result = 1;
+    while(y > 0)
+    {
+        result *= x;
+        y--;
+    }
+    return (result);
+}
+double	atodb(char *str)
+{
+	int	i;
+	double	sin;
+    double div;
+	double result;
+	
+    div = 1;
+	i = 0;
+	sin = 1;
+	if (str[i] == 45 || str[i] == 43)
+	{
+        if (str[i] == 45)
+		    sin = -1;
+		i++;
+	}
+	result = (double)(str[i] - '0');
+    i += 2;
+	while(str[i] != '\0')
+	{
+		result += (double)((str[i] - '0') / ft_pow(10, div));
+		i++;
+        div++;
+	}
+	return (result * sin);
+}
 
 int	check_number(char *str)
 {
