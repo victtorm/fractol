@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 18:13:10 by vbritto-          #+#    #+#             */
-/*   Updated: 2024/04/18 18:42:49 by vbritto-         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:17:20 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int	main(int argc, char **argv)
 			fractal.c.i = atodb(argv[3]);
 		}
 		fractal_init(&fractal);
-		fractal_img(&fractal);
+		fractal_events(&fractal);
+		//fractal_img(&fractal);
 		mlx_loop(fractal.mlx_connection);
 	}
 	return (0);
 }
+

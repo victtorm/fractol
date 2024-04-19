@@ -1,4 +1,4 @@
-FRACTOL_FILES = check_julia.c check_mandelbrot.c fractal_init.c fractal_img.c math_utils.c
+FRACTOL_FILES = check_julia.c check_mandelbrot.c fractal_init.c fractal_img.c math_utils.c fractal_events.c
 OBJS = ${FRACTOL_FILES:.c=.o}
 CC = cc
 RM = rm -f
