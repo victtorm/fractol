@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:03:20 by vbritto-          #+#    #+#             */
-/*   Updated: 2024/04/18 17:21:07 by vbritto-         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:51:04 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,16 @@ t_complex   ft_square(t_complex z);
 
 // FRACTOL_IMG
 
-void	set_start_c(t_fractal *fractal, t_complex z);
+void        set_start_c(t_fractal *fractal, t_complex z);
 void        fractal_img(t_fractal *fractal);
 //static void scale_pixel(int x, int y, t_fractal *fractal);
-double	scale(double u_num, double n_min, double n_max, double o_max);
-void	ft_put_pixels(t_fractal *fractal, int x, int y, int color);
+double	    scale(double u_num, double n_min, double n_max, double o_max);
+void	    ft_put_pixels(t_fractal *fractal, int x, int y, int color);
+
+// EVENTS
+
+void        fractal_events(t_fractal *fractal);
+int         key_imput(int keysym, t_fractal *fractal);
+int mouse_imput(int button, int x, int y, t_fractal *fractal);
 
 #endif
